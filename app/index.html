@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="smartApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Smart Appointment</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+
+        <!-- App specific css -->
+        <link rel="stylesheet" href="css/master.css">
+    </head>
+    <body>
+
+        <!-- HEADER AND NAVBAR -->
+        <header>
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <img src="img/smart-app-logo.jpg" class="app-logo img-responsive" alt="Responsive image">
+                    </div>
+
+                    <form class="credential-form nav navbar-nav navbar-right">
+                        <input class="login-input " type="email" name="emailAddress" placeholder="Enter email">
+                        <input class="login-input" type="password" name="password" placeholder="Enter password">
+                        <button type="button" class="sign-in-button font-settings btn btn-primary btn-sm"> Sign In </button>
+                        <a class="forgot-password font-settings" href="/forgot_password.html">Forgot your password?</a>
+                    </form>
+                </div>
+            </nav>
+        </header>
+
+        <!-- MAIN CONTENT AND INJECTED VIEWS -->
+        <div id="main">
+            <div ng-controller="CarouselDemoCtrl">
+                <div style="height: 305px">
+                    <carousel interval="myInterval">
+                        <slide ng-repeat="slide in slides" active="slide.active">
+                            <img ng-src="{{slide.image}}" style="margin:auto;">
+                            <div class="carousel-caption">
+                                <h4>Slide {{$index}}</h4>
+                                <p>{{slide.text}}</p>
+                            </div>
+                        </slide>
+                    </carousel>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="text-center">
+            <a href="/about"> About Us </a>
+            <a href="/contact"> Contact </a>
+        </footer>
+
+        <!-- Plugins -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>   <!-- Use either ui.bootstrap or jquery/bootstrap -->
+        <!--<script src="bower_components/jquery/jquery-1.11.1.min.js"></script>-->
+        <!--<script src="bower_components/bootstrap/bootstrap.min.js"></script>-->
+
+        <!-- Application components -->
+        <script src="js/app.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/filters.js"></script>
+        <script src="js/directives.js"></script>
+    </body>
+</html>
